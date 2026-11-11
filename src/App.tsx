@@ -1,14 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Register  from './pages/Register'
 import PostDetail from './pages/PostDetail'
+import { Navbar } from './components/index'
 
 function App() {
   return (
     <div>
-      <main>
+      <main className="app-main">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
