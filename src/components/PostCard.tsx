@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { PostWithDetails } from "../types/Post.interface";
+import type { PostWithDetails } from "../types/index";
 import styles from "./PostCard.module.css";
 
 

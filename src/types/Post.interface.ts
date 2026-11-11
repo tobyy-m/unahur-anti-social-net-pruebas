@@ -1,8 +1,14 @@
-import type { User } from './User.interface';
+export interface User {
+  id: number;
+  nickName: string;
+  email: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
 export interface PostTag {
-  createdAt?: string;
-  updatedAt?: string;
+  createdAt: string;
+  updatedAt: string;
   PostId: number;
   TagId: number;
 }
@@ -10,8 +16,8 @@ export interface PostTag {
 export interface TagBase {
   id: number;
   name: string;
-  createdAt?: string;
-  updatedAt?: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface Tag extends TagBase {
@@ -28,14 +34,17 @@ export interface Post {
   Tags?: Tag[];
 }
 
-export type NewPost = Pick<Post, "description" | "UserId">;
-
 export interface PostImage {
   id: number;
   url: string;
   createdAt: string;
   updatedAt: string;
   PostId: number;
+}
+
+export interface PostWithDetails extends Post {
+  images: PostImage[];
+  comments: PostComment[];
 }
 
 export interface PostComment {
@@ -46,9 +55,4 @@ export interface PostComment {
   PostId: number;
   UserId: number;
   User?: User;
-}
-
-export interface PostWithDetails extends Post {
-  images: PostImage[];
-  comments: PostComment[];
 }

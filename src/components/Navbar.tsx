@@ -1,9 +1,8 @@
 import styles from "./Navbar.module.css";
-import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { LoginModal } from "./index";
+import { ModalLogin } from "./index";
 
 function Navbar() {
     const [mostrarModal, setMostrarModal] = useState(false);
@@ -15,7 +14,7 @@ function Navbar() {
             <nav className={styles.navbar}>
                 <button onClick={() => setEstaLogueado(!estaLogueado)}>
                     {estaLogueado ? "Simular logout" : "Simular login"}
-                </button>
+                </button> {/*Esto lo sacamos una vez que tengamos hecho el login. Ahora esta para ver el comportamiento del nav dependiendo si esta logueado o no. - Toby*/}
                 <ul>
                     <li>
                         <NavLink to="/" >
@@ -55,7 +54,7 @@ function Navbar() {
                 </ul>
             </nav>
 
-            <LoginModal mostrar={mostrarModal} cerrarModal={() => setMostrarModal(false)} />
+            <ModalLogin mostrar={mostrarModal} cerrarModal={() => setMostrarModal(false)} />
         </>
     )
 }
