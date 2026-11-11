@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
+import { Navbar } from './components/index'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Register  from './pages/Register'
 import PostDetail from './pages/PostDetail'
-import { Navbar } from './components/index'
 
 function App() {
   return (
